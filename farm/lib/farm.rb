@@ -10,6 +10,12 @@ class SilentAnimal
   end
 end
 
+class TrustworthyAnimal
+  def self.all(ids)
+    Animal.all(ids).map {|animal| animal || SilentAnimal.new}
+  end
+end
+
 class Farm
   attr_reader :animals
 
