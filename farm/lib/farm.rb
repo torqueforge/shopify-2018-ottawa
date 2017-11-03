@@ -12,12 +12,12 @@ class Farm
   end
 
   def verse(animal)
-    if animal
-      sound   = animal.sound
-      species = animal.species
-    else
+    if animal.nil?
       sound   = "<silence>"
       species = "<silence>"
+    else
+      sound   = animal.sound
+      species = animal.species
     end
     "Old MacDonald had a farm, E-I-E-I-O,\n" +
     "And on that farm he had #{species.articlize}, E-I-E-I-O,\n" +
