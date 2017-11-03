@@ -33,20 +33,3 @@ class House
     DATA
   end
 end
-
-class RandomHouse < House
-  def data
-    @data ||= super.shuffle
-  end
-end
-
-puts RandomHouse.new.line(12)
-
-class PirateHouse < House
-  def prefix
-    "Thar be"
-  end
-end
-
-puts
-puts PirateHouse.new.line(12)
