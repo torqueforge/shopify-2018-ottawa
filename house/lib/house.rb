@@ -41,3 +41,12 @@ class RandomHouse < House
 end
 
 puts RandomHouse.new.line(12)
+
+class PirateHouse < House
+  def prefix
+    "Thar be"
+  end
+end
+
+puts
+puts PirateHouse.new.line(12)
