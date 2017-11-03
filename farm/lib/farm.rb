@@ -1,5 +1,15 @@
 using Article
 
+class NilClass
+  def sound
+    "<silence>"
+  end
+
+  def species
+    "<silence>"
+  end
+end
+
 class Farm
   attr_reader :animals
 
