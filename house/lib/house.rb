@@ -16,6 +16,7 @@ class House
   attr_reader :data, :prefix
   def initialize(orderer: OriginalOrderer.new, prefixer: MundanePrefixer.new)
     @data = orderer.order(DATA)
+    @prefix = prefixer.prefix
   end
 
   def recite
