@@ -13,7 +13,7 @@ class House
       "the malt that lay in",
       "the house that Jack built"]
 
-  attr_reader :data
+  attr_reader :data, :prefix
   def initialize(orderer: OriginalOrderer.new)
     @data = orderer.order(DATA)
   end
