@@ -61,3 +61,5 @@ end
 puts House.new(orderer: RandomOrderer.new).line(12)
 puts
 puts House.new(prefixer: PiratePrefixer.new).line(12)
+puts
+puts House.new(orderer: RandomOrderer.new, prefixer: PiratePrefixer.new).line(12)
