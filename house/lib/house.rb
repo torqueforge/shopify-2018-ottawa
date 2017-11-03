@@ -57,13 +57,13 @@ class FixedLastRandomOrderer
   end
 end
 
-class MixedActorActionOrderer
+class MixedABOrderer
   def order(data)
     data.transpose.collect {|row| row.shuffle}.transpose
   end
 end
 
-class MixedActorActionFixedLastOrderer
+class MixedABFixedLastOrderer
   def order(data)
     data[0..-2].transpose.collect {|row| row.shuffle}.transpose << data[-1]
   end
@@ -83,6 +83,6 @@ end
 
 
 
-puts House.new(phrases: HousePhrases.new(orderer: MixedActorActionOrderer.new)).line(12)
+puts House.new(phrases: HousePhrases.new(orderer: MixedABOrderer.new)).line(12)
 puts
-puts House.new(phrases: HousePhrases.new(orderer: MixedActorActionFixedLastOrderer.new)).line(12)
+puts House.new(phrases: HousePhrases.new(orderer: MixedABFixedLastOrderer.new)).line(12)
