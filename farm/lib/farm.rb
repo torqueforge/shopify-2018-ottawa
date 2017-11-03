@@ -40,3 +40,24 @@ class Farm
     "Old MacDonald had a farm, E-I-E-I-O."
   end
 end
+
+# The following ensures that my wrapper is called instead of original method
+require 'pathname'
+module Animal
+  singleton_class.send(:alias_method, :orig_all, :all)
+
+  def self.all(ids)
+    validate_caller(caller_locations(1,1).first)
+    orig_all(ids)
+  end
+
+  def self.validate_caller(caller)
+    actual_calling_file = Pathname.new(caller.path).basename.to_s
+    expected_calling_file = "farm.rb"
+
+    msg = "Animal.all may only be called by MyAnimal (defined in #{expected_calling_file})." +
+          "Please change 'Anmial.all' to 'MyAnimal.all' in #{actual_calling_file}) "
+
+    raise "Error: #{msg}" unless actual_calling_file == expected_calling_file
+  end
+end
