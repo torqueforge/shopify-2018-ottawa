@@ -46,3 +46,5 @@ class OriginalOrderer
     data
   end
 end
+
+puts House.new(orderer: RandomOrderer.new).line(12)
