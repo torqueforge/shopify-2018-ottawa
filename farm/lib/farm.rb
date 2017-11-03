@@ -12,7 +12,7 @@ class Farm
   end
 
   def verse(animal)
-    if animal.nil?
+    if animal == nil
       sound   = "<silence>"
       species = "<silence>"
     else
