@@ -14,8 +14,8 @@ class House
       "the house that Jack built"]
 
   attr_reader :data
-  def initialize
-    @data = DATA
+  def initialize(orderer: OriginalOrderer.new)
+    @data = orderer.order(DATA)
   end
 
   def recite
