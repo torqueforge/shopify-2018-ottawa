@@ -35,7 +35,7 @@ class House
       "the house that Jack built"]
 
   attr_reader :data, :prefix
-  def initialize(phrases: HousePhrases.new, orderer: OriginalOrderer.new, prefixer: MundanePrefixer.new)
+  def initialize(phrases: HousePhrases.new, prefixer: MundanePrefixer.new)
     @data = phrases.data
     @prefix = prefixer.prefix
   end
