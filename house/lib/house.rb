@@ -25,6 +25,10 @@ class House
     "This is #{phrase(num)}.\n"
   end
 
+  def prefix
+    "This is"
+  end
+
   def data
     DATA
   end
