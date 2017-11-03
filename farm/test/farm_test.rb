@@ -50,6 +50,6 @@ And on that farm he had a duck, E-I-E-I-O,
 With a quack quack here and a quack quack there,
 Here a quack, there a quack, everywhere a quack quack,
 Old MacDonald had a farm, E-I-E-I-O.]
-    assert_equal expected, Farm.new(Animal.all(['pig', '', 'duck'])).lyrics
+    assert_equal expected, Farm.new(TrustworthyAnimal.all(['pig', '', 'duck'])).lyrics
   end
 end
