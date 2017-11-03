@@ -22,7 +22,7 @@ class House
   end
 
   def line(num)
-    "This is #{phrase(num)}.\n"
+    "#{prefix} #{phrase(num)}.\n"
   end
 
   def prefix
