@@ -12,7 +12,7 @@ And on that farm he had a pig, E-I-E-I-O,
 With an oink oink here and an oink oink there,
 Here an oink, there an oink, everywhere an oink oink,
 Old MacDonald had a farm, E-I-E-I-O.]
-    assert_equal expected, Farm.new(Animal.all(['pig'])).lyrics
+    assert_equal expected, Farm.new(TrustworthyAnimal.all(['pig'])).lyrics
   end
 
   def test_pig_and_owl
@@ -28,7 +28,7 @@ And on that farm he had an owl, E-I-E-I-O,
 With a hoot hoot here and a hoot hoot there,
 Here a hoot, there a hoot, everywhere a hoot hoot,
 Old MacDonald had a farm, E-I-E-I-O.]
-    assert_equal expected, Farm.new(Animal.all(['pig', 'owl'])).lyrics
+    assert_equal expected, Farm.new(TrustworthyAnimal.all(['pig', 'owl'])).lyrics
   end
 
   def test_pig_and_nothing_and_duck
