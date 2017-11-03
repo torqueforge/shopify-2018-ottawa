@@ -85,4 +85,4 @@ end
 
 
 
-puts House.new(orderer: FixedLastRandomOrderer.new).line(12)
+puts House.new(phrases: HousePhrases.new(orderer: FixedLastRandomOrderer.new)).line(12)
