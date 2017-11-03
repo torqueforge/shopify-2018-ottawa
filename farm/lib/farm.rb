@@ -22,6 +22,7 @@ class Farm
   end
 
   def verse(animal)
+    animal ||= SilentAnimal.new
     sound   = animal.sound
     species = animal.species
 
