@@ -1,6 +1,6 @@
 using Article
 
-class NilClass
+class SilentAnimal
   def sound
     "<silence>"
   end
