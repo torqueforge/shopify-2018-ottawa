@@ -14,7 +14,7 @@ class Farm
   attr_reader :animals
 
   def initialize(animals)
-    @animals = animals
+    @animals = animals.map {|animal| animal || SilentAnimal.new}
   end
 
   def lyrics
