@@ -44,6 +44,12 @@ class OriginalOrderer
   end
 end
 
+class FixedLastRandomOrderer
+  def order(data)
+    data[0..-2].shuffle << data[-1]
+  end
+end
+
 class PiratePrefixer
   def prefix
     "Thar be"
@@ -58,8 +64,4 @@ end
 
 
 
-puts House.new(orderer: RandomOrderer.new).line(12)
-puts
-puts House.new(prefixer: PiratePrefixer.new).line(12)
-puts
-puts House.new(orderer: RandomOrderer.new, prefixer: PiratePrefixer.new).line(12)
+puts House.new(orderer: FixedLastRandomOrderer.new).line(12)
