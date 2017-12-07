@@ -92,3 +92,5 @@ end
 puts House.new(orderer: RandomOrderer.new).line(12)
 puts
 puts House.new(orderer: FixedLastRandomOrderer.new).line(12)
+puts
+puts House.new(phrases: HousePhrases.new(orderer: FixedLastRandomOrderer.new)).line(12)
