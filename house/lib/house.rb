@@ -36,7 +36,7 @@ class House
       "the house that Jack built"]
   attr_reader :data, :prefix
 
-  def initialize(phrases: HousePhrases.new, orderer: OriginalOrderer.new, prefixer: MundanePrefixer.new)
+  def initialize(phrases: HousePhrases.new, prefixer: MundanePrefixer.new)
     @data = phrases.data
     @prefix = prefixer.prefix
   end
@@ -88,9 +88,4 @@ class MundanePrefixer
   end
 end
 
-
-puts House.new(orderer: RandomOrderer.new).line(12)
-puts
-puts House.new(orderer: FixedLastRandomOrderer.new).line(12)
-puts
 puts House.new(phrases: HousePhrases.new(orderer: FixedLastRandomOrderer.new)).line(12)
