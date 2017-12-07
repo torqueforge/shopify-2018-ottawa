@@ -67,6 +67,13 @@ class MixedActorActionOrderer
   end
 end
 
+class MixedActorActionFixedLastOrderer
+  def order(data)
+    data[0..-2].transpose.collect {|row| row.shuffle}.transpose << data[-1]
+  end
+end
+
+
 
 class PiratePrefixer
   def prefix
@@ -83,3 +90,5 @@ end
 puts House.new(phrases: HousePhrases.new(orderer: FixedLastRandomOrderer.new)).line(12)
 puts
 puts House.new(phrases: HousePhrases.new(orderer: MixedActorActionOrderer.new)).line(12)
+puts
+puts House.new(phrases: HousePhrases.new(orderer: MixedActorActionFixedLastOrderer.new)).line(12)
