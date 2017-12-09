@@ -28,9 +28,8 @@ Integer.ancestors   # look upwards
 Integer.subclasses  # look downwards
 Numeric.subclasses  #         "
 
-# The current #subclasses method shows every decendant of a Class,
-# i.e. Numeric has subclass Integer, which has subclasses Bignum and Fixnum.
-# It shows everthing in the hierarchy below the starting class.
+# The current #subclasses method shows every decendant of a Class, i.e.
+# it shows everthing in the hierarchy below the starting class.
 
 # What if I want to see a nested hierarchy?
 class Class
