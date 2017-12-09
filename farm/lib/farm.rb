@@ -55,8 +55,8 @@ module Animal
     actual_calling_file = Pathname.new(caller.path).basename.to_s
     expected_calling_file = "farm.rb"
 
-    msg = "Animal.all may only be called by MyAnimal (defined in #{expected_calling_file})." +
-          "Please change 'Anmial.all' to 'MyAnimal.all' in #{actual_calling_file}) "
+    msg = "Animal.all may only be called by TrustworthyAnimal (defined in #{expected_calling_file})." +
+          "Please change 'Anmial.all' to 'TrustworthyAnimal.all' in #{actual_calling_file}) "
 
     raise "Error: #{msg}" unless actual_calling_file == expected_calling_file
   end
